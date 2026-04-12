@@ -1,0 +1,549 @@
+{
+  "nav": {
+    "features": "Functies",
+    "howItWorks": "Hoe het werkt",
+    "pricing": "Prijzen",
+    "faq": "FAQ",
+    "signIn": "Inloggen",
+    "getStarted": "Aan de slag",
+    "search": "Zoeken..."
+  },
+  "hero": {
+    "badge": "AI-aangedreven computationele biologie",
+    "title": "Versnel ontdekkingen met",
+    "subtitle": "Eiwitvoorspelling, moleculaire docking, synthetische biologie-ontwerp, CRISPR-experimenttracking, AI-aangestuurd celkweekbeheer en 3D-moleculaire visualisatie — alles op beveiligde, multi-tenant cloudinfrastructuur.",
+    "seeHow": "Bekijk Demo"
+  },
+  "features": {
+    "title": "Kernmogelijkheden",
+    "protein": {
+      "title": "Eiwitvoorspelling",
+      "desc": "ESMFold & AlphaFold 2 met mutatiesimulatie, AI-interpretatie en batchinzending."
+    },
+    "docking": {
+      "title": "Moleculaire Docking",
+      "desc": "AutoDock Vina met AI-bindingsanalyse, wetenschappelijk rapportexport en geavanceerde parameterinstellingen."
+    },
+    "synbio": {
+      "title": "SynBio-ontwerp",
+      "desc": "ORF-zoeker, restrictie-enzymanalyse, echte codonoptimalisatie, primerontwerp, constructscore en GenBank-export."
+    },
+    "crispr": {
+      "title": "CRISPR-lab",
+      "desc": "Ontwerp & optimaliseer guide-RNA's, off-target analyses, versievergelijking, analytische dashboards en laboratoriumrapporten."
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "desc": "AI-aangedreven groeivoorspelling, besmettingswaarschuwingen, kweeksvergelijking, AI-chatassistent en downloadbare laboratoriumrapporten."
+    },
+    "viewer": {
+      "title": "3D Viewer",
+      "desc": "Docking-visualisatie, mutatiesimulator, multi-structuuruitlijning, sequentiesynchronisatie, AI-interpretatie, residu-annotaties en interactieve analysegrafieken."
+    }
+  },
+  "howItWorks": {
+    "title": "Hoe het werkt",
+    "step": "Stap {{n}}",
+    "upload": {
+      "title": "Upload uw data",
+      "desc": "Dien eiwitsequenties, ligand-bibliotheken of synthetische biologie-constructen in via onze intuïtieve interface."
+    },
+    "configure": {
+      "title": "Configureer & Start",
+      "desc": "Kies uw engine, parameters en verwerkingsprioriteit. Start taken met één klik — wij regelen de infrastructuur."
+    },
+    "analyze": {
+      "title": "Analyseer resultaten",
+      "desc": "Bekijk 3D-structuren, docking-scores en optimalisatiemetrieken in realtime. Exporteer of deel met uw team."
+    }
+  },
+  "testimonials": {
+    "title": "Vertrouwd door onderzoekers"
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "subtitle": "Eenvoudige, transparante prijzen voor elk teamformaat.",
+    "mostPopular": "Meest populair",
+    "free": {
+      "name": "Gratis",
+      "description": "Begin zonder kosten"
+    },
+    "starter": {
+      "name": "Starter",
+      "description": "Voor individuele onderzoekers"
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "Voor onderzoeksteams"
+    },
+    "elite": {
+      "name": "Elite",
+      "description": "Voor grote instellingen"
+    },
+    "perMonth": "/maand"
+  },
+  "comparison": {
+    "title": "Waarom ORDEX kiezen?",
+    "subtitle": "Bekijk hoe ORDEX zich verhoudt tot de toonaangevende platformen voor computationele biologie.",
+    "feature": "Functie",
+    "categories": {
+      "access": "Toegang & Prijzen",
+      "capabilities": "Mogelijkheden",
+      "collaboration": "Samenwerking",
+      "usability": "Gebruiksgemak",
+      "advancedTools": "Geavanceerde wetenschappelijke tools",
+      "viewer3dAdvanced": "3D-viewer & Analyse"
+    },
+    "rows": {
+      "cloudBased": "Volledig cloudgebaseerd",
+      "noInstall": "Geen installatie vereist",
+      "freeTier": "Gratis tier beschikbaar",
+      "creditPricing": "Pay-per-use credits",
+      "proteinPrediction": "Eiwitstructuurvoorspelling",
+      "molecularDocking": "Moleculaire docking",
+      "synbioDesign": "Synthetische biologie ontwerp",
+      "crisprTracking": "CRISPR-experimenttracking",
+      "cellCultureAI": "AI-celkweekbeheer",
+      "viewer3d": "3D-molecuulviewer",
+      "multiTenant": "Multi-tenant organisaties",
+      "teamRoles": "Rolgebaseerde teamtoegang",
+      "realtimeJobs": "Realtime taakmonitoring",
+      "auditLogs": "Auditlogs",
+      "multiLanguage": "Meertalige ondersteuning",
+      "batchJobs": "Batch-taakindiening",
+      "apiAccess": "API-toegang",
+      "aiInterpretation": "AI resultaatinterpretatie",
+      "restrictionAnalysis": "Restrictie-enzymanalyse",
+      "codonOptimization": "Echte codonoptimalisatie (CAI)",
+      "primerDesign": "Primerontwerp met Tm/GC",
+      "genbankExport": "GenBank (.gb) export",
+      "scientificReport": "Wetenschappelijk rapport export",
+      "dockingParams": "Geavanceerde dockingparameters",
+      "constructScoring": "Constructkwaliteitsscore",
+      "mutationSimulator": "Mutatiesimulator",
+      "orfFinder": "ORF-zoeker & vertaling",
+      "structureAnnotations": "Structuurannotaties & notities",
+      "multiStructureAlign": "Multi-structuuruitlijning",
+      "dockingVisualization": "Docking-pose visualisatie",
+      "aiStructureExplain": "AI-structuuruitleg",
+      "sequenceViewer": "Geïntegreerde sequentieviewer",
+      "analysisCharts": "RMSD/SASA-analysegrafieken",
+      "seatManagement": "Facturering & beheer per stoel",
+      "notifications": "In-app meldingen",
+      "guideDesigner": "CRISPR-guide-RNA-ontwerper",
+      "offTargetAnalysis": "Off-target risicoanalyse",
+      "plasmidDesigner": "Visueel plasmidekaartontwerp"
+    },
+    "legendFull": "Volledige ondersteuning",
+    "legendPartial": "Gedeeltelijk / beperkt",
+    "legendNone": "Niet beschikbaar"
+  },
+  "faqSection": {
+    "title": "Veelgestelde vragen"
+  },
+  "footer": {
+    "tagline": "AI-aangedreven computationele biologie voor moderne onderzoeksteams.",
+    "product": "Product",
+    "company": "Bedrijf",
+    "aboutUs": "Over ons",
+    "contact": "Contact",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "rights": "© {{year}} ORDEX Systems. Alle rechten voorbehouden."
+  },
+  "auth": {
+    "signInTitle": "Inloggen op uw account",
+    "signUpTitle": "Maak een nieuw account aan",
+    "resetTitle": "Wachtwoord opnieuw instellen",
+    "fullName": "Volledige naam",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "signInBtn": "Inloggen",
+    "signUpBtn": "Account aanmaken",
+    "resetBtn": "Link versturen",
+    "pleaseWait": "Even geduld...",
+    "noAccount": "Nog geen account?",
+    "hasAccount": "Heeft u al een account?",
+    "signUp": "Registreren",
+    "backToSignIn": "Terug naar inloggen",
+    "backToHome": "Terug naar home"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "workflows": "Workflows",
+    "proteinPrediction": "Eiwitvoorspelling",
+    "molecularDocking": "Moleculaire Docking",
+    "synbioDesign": "SynBio-ontwerp",
+    "crisprLab": "CRISPR-lab",
+    "cellcultureAi": "CellCulture AI",
+    "viewer3d": "3D Viewer",
+    "projects": "Projecten",
+    "billing": "Facturering & Gebruik",
+    "team": "Team",
+    "settings": "Instellingen",
+    "help": "Hulp & Support",
+    "freePlan": "Gratis Plan",
+    "plan": "{{tier}} Plan"
+  },
+  "dashboard": {
+    "welcome": "Welkom terug, {{name}}",
+    "subtitle": "Overzicht van uw berekeningsworkflows en systeemstatus",
+    "creditsBalance": "Creditssaldo",
+    "activeJobs": "Actieve taken",
+    "completed": "Voltooid",
+    "designs": "Ontwerpen",
+    "totalItems": "{{count}} items totaal",
+    "synbioDesigns": "SynBio-ontwerpen",
+    "buyCredits": "Credits kopen",
+    "view": "Bekijken",
+    "quickSubmit": "Snel indienen",
+    "protein": "Eiwit",
+    "docking": "Docking",
+    "synbio": "SynBio",
+    "submit": "Indienen",
+    "running": "Bezig...",
+    "recentJobs": "Recente taken",
+    "jobs": "{{count}} taken",
+    "noJobs": "Nog geen taken. Gebruik de snelle indiening hierboven of ga naar een workflowpagina.",
+    "id": "ID",
+    "type": "Type",
+    "name": "Naam",
+    "status": "Status",
+    "credits": "Credits",
+    "date": "Datum",
+    "activityFeed": "Activiteitenoverzicht",
+    "noActivity": "Geen recente activiteit",
+    "firstJob": "Dien uw eerste taak in om te beginnen",
+    "workflowSummary": "Workflow-samenvatting",
+    "proteinJobs": "Eiwittaken",
+    "dockingJobs": "Dockingtaken",
+    "active": "Actief",
+    "recentUsage": "Recent gebruik",
+    "noUsage": "Nog geen gebruikslogboeken",
+    "systemStatus": "Systeemstatus",
+    "coreServices": "Kerndiensten",
+    "jobWorker": "Taakwerker",
+    "edgeCompute": "Edge Compute",
+    "storage": "Opslag",
+    "proteinStatus": "Eiwitvoorspelling {{status}}",
+    "dockingStatus": "Dockingtaak {{status}}"
+  },
+  "topbar": {
+    "signedOut": "Uitgelogd",
+    "credits": "Creditssaldo"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "subtitle": "Beheer uw account, werkruimte en voorkeuren",
+    "profile": "Profiel",
+    "workspace": "Werkruimte",
+    "profileSettings": "Profielinstellingen",
+    "fullName": "Volledige naam",
+    "timeZone": "Tijdzone",
+    "emailAddress": "E-mailadres",
+    "confidenceScores": "Eiwitbetrouwbaarheidsscores tonen",
+    "skipCreditPreview": "Creditkosten-voorvertoning overslaan vóór taken",
+    "skipCreditDesc": "Indien ingeschakeld, wordt het creditkostenoverzicht verborgen op workflowpagina's. Taken zullen nog steeds credits aftrekken.",
+    "saveProfile": "Profiel opslaan",
+    "saving": "Opslaan...",
+    "reset": "Herstellen",
+    "workspaceConfig": "Werkruimte-configuratie",
+    "workspaceName": "Werkruimtenaam",
+    "orgId": "Organisatie-ID",
+    "saveWorkspace": "Werkruimte opslaan",
+    "saveChanges": "Wijzigingen opslaan",
+    "resetDefaults": "Standaard herstellen"
+  },
+  "projects": {
+    "title": "Projecten & Bestanden",
+    "subtitle": "Beheer uw computationele biologie-projecten en bestanden",
+    "newProject": "Nieuw project",
+    "searchProjects": "Projecten zoeken...",
+    "noProjects": "Nog geen projecten",
+    "selectProject": "Selecteer een project",
+    "selectProjectDesc": "Kies een project aan de linkerkant om de bestanden te bekijken",
+    "upload": "Uploaden",
+    "deleteProject": "Project verwijderen",
+    "noFiles": "Nog geen bestanden — upload er een om te beginnen",
+    "createNewProject": "Nieuw project aanmaken",
+    "projectName": "Projectnaam",
+    "projectNamePlaceholder": "bijv. CRISPR-genbewerking",
+    "descriptionOptional": "Beschrijving (optioneel)",
+    "descriptionPlaceholder": "Korte projectbeschrijving",
+    "creating": "Aanmaken...",
+    "create": "Aanmaken"
+  },
+  "billing": {
+    "title": "Facturering & Gebruik",
+    "subtitle": "Credits monitoren, rekenpakketten kopen en gebruiksgeschiedenis bekijken",
+    "noActiveSub": "Geen actief abonnement",
+    "subscribeBelow": "Abonneer hieronder om meer credits te ontgrendelen",
+    "renews": "Verlenging op {{date}}",
+    "extraSeats": "{{count}} extra stoel(en) × ${{price}}/ma = ${{total}}/ma",
+    "manageSubscription": "Abonnement beheren",
+    "opening": "Openen…",
+    "refresh": "Vernieuwen",
+    "creditsBalance": "Creditssaldo",
+    "organization": "Organisatie",
+    "totalUsed": "Totaal gebruikt",
+    "transactions": "{{count}} transacties",
+    "proteinJobs": "Eiwittaken",
+    "dockingJobs": "Dockingtaken",
+    "credits": "credits",
+    "buyCredits": "Credits kopen",
+    "buyCreditsDesc": "Eenmalige aankoop — credits worden direct na betaling toegevoegd",
+    "bestValue": "Beste waarde",
+    "perCredit": "per credit",
+    "buyNow": "Nu kopen",
+    "redirecting": "Doorverwijzen...",
+    "creditUsageTrend": "Creditgebruiktrend",
+    "noUsageData": "Nog geen gebruiksgegevens",
+    "costBreakdown": "Kostenverdeling",
+    "proteinPrediction": "Eiwitvoorspelling",
+    "molecularDocking": "Moleculaire Docking",
+    "synbioDesign": "SynBio-ontwerp",
+    "noUsage": "Geen gebruik",
+    "usageHistory": "Gebruiksgeschiedenis",
+    "exportCsv": "CSV exporteren",
+    "noUsageHistory": "Nog geen gebruiksgeschiedenis. Dien een taak in om activiteit hier te zien.",
+    "description": "Beschrijving",
+    "date": "Datum"
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Beheer de leden en uitnodigingen van uw organisatie.",
+    "inviteMember": "Lid uitnodigen",
+    "emailPlaceholder": "collega@universiteit.edu",
+    "roleMember": "Lid",
+    "roleAdmin": "Admin",
+    "sendInvite": "Uitnodiging versturen",
+    "members": "Leden",
+    "pendingInvites": "Openstaande uitnodigingen",
+    "removeMemberTitle": "Lid verwijderen?",
+    "removeMemberDesc": "Dit lid wordt uit de organisatie verwijderd en verliest toegang tot alle werkruimtegegevens.",
+    "cancel": "Annuleren",
+    "remove": "Verwijderen"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "retry": "Opnieuw proberen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "back": "Terug",
+    "next": "Volgende",
+    "close": "Sluiten",
+    "noOrg": "Geen org"
+  },
+  "tools": {
+    "protein": {
+      "title": "Eiwitstructuurvoorspelling",
+      "subtitle": "Eiwitvouwingsvoorspellingen configureren en uitvoeren met ESMFold & AlphaFold 2",
+      "inputConfig": "Invoer & Configuratie",
+      "jobQueue": "Takenwachtrij",
+      "resultsInspector": "Resultaten-inspecteur",
+      "startJob": "Taak starten",
+      "processing": "Verwerking...",
+      "noJobs": "Nog geen taken. Dien uw eerste voorspelling hierboven in."
+    },
+    "docking": {
+      "title": "Moleculaire Docking Lab",
+      "subtitle": "Echte farmacologische scoring met RCSB PDB & PubChem-data — {{cost}} credits per taak",
+      "inputConfig": "Invoer & Configuratie",
+      "startDocking": "Docking starten ({{cost}} credits)",
+      "computing": "Berekening...",
+      "noDockingJobs": "Nog geen dockingtaken. Dien uw eerste taak hierboven in."
+    },
+    "synbio": {
+      "title": "Synthetische Biologie-ontwerp",
+      "subtitle": "DNA-constructen ontwerpen, visualiseren en valideren voor synthetische biologie",
+      "sequenceTools": "Sequentie-tools",
+      "saveDesign": "Ontwerp opslaan",
+      "exportConstruct": "Construct exporteren"
+    },
+    "crispr": {
+      "title": "CRISPR Experiment Lab",
+      "subtitle": "Elke genbewerking bewaken, versiebeheren en auditen gedurende de gehele levenscyclus",
+      "experiments": "Experimenten",
+      "optimizer": "Optimalisator",
+      "analytics": "Analyse",
+      "audit": "Audit",
+      "report": "Rapport",
+      "downloadLabReport": "Labrapport downloaden",
+      "riskHigh": "Hoog risico",
+      "riskMedium": "Gemiddeld risico",
+      "riskLow": "Laag risico",
+      "optimizeGuide": "Guide optimaliseren",
+      "efficiencyHistogram": "Efficiëntie-histogram",
+      "casDistribution": "Cas-variantverdeling",
+      "pamPerformance": "PAM-prestatie"
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "subtitle": "AI-aangestuurd celkweekbeheer — groei voorspellen, besmetting detecteren, condities optimaliseren",
+      "newCulture": "Nieuwe kweek",
+      "yourCultures": "Uw kweken",
+      "aiChat": "AI Chat",
+      "compare": "Vergelijken",
+      "report": "Rapport",
+      "growthCharts": "Groeicurven",
+      "alerts": "Waarschuwingen",
+      "passageCulture": "Kweek passageren",
+      "markContaminated": "Besmet markeren",
+      "runAiAnalysis": "AI-analyse starten",
+      "downloadLabReport": "Labrapport downloaden",
+      "analysisHistory": "Analysegeschiedenis",
+      "selectCultures": "Selecteer kweken om te vergelijken",
+      "comparisonTable": "Parametervergelijking",
+      "growthComparison": "Groeivergelijking",
+      "viabilityComparison": "Viabiliteitsvergelijking",
+      "hoursFromStart": "Uren vanaf start",
+      "cultureReport": "Kweek-labrapport",
+      "noLogsYet": "Nog geen observatielogs"
+    },
+    "viewer": {
+      "title": "3D-structuurviewer",
+      "subtitle": "Interactieve moleculaire visualisatie met echte PDB-data"
+    },
+    "help": {
+      "title": "Hulp & Support",
+      "subtitle": "Vind antwoorden op veelgestelde vragen over elk hulpmiddel en hoe u het meeste uit ORDEX Systems haalt.",
+      "general": "Algemeen",
+      "generalDesc": "Vragen over account, facturering en het platform.",
+      "needHelp": "Nog hulp nodig?",
+      "needHelpDesc": "Als u het antwoord niet kunt vinden, neem dan contact op met ons supportteam. We reageren doorgaans binnen 24 uur op werkdagen."
+    },
+    "billing": {
+      "title": "Facturering & Gebruik"
+    }
+  },
+  "help": {
+    "general": {
+      "q1": "Hoe werken credits?",
+      "a1": "Credits worden verbruikt wanneer u rekentaken uitvoert (voorspellingen, docking, AI-analyses). Elk tool toont de geschatte creditkosten voordat u een taak indient. Credits worden gedeeld binnen uw organisatie en kunnen worden gekocht op de pagina Facturering & Gebruik.",
+      "q2": "Ik krijg fouten over 'onvoldoende credits'",
+      "a2": "Het creditsaldo van uw organisatie is te laag voor de gevraagde taak. Koop extra credits bij Facturering & Gebruik, of vraag uw organisatiebeheerder dit te doen.",
+      "q3": "Hoe nodig ik teamleden uit?",
+      "a3": "Ga naar de Teampagina en gebruik het uitnodigingsformulier om uitnodigingen per e-mail te versturen. Uitgenodigde gebruikers ontvangen een link om lid te worden van uw organisatie. Alleen beheerders kunnen nieuwe leden uitnodigen.",
+      "q4": "Kan ik de naam van mijn organisatie/werkruimte wijzigen?",
+      "a4": "Ja — ga naar Instellingen → Werkruimte en werk de naam bij. Alleen organisatiebeheerders kunnen deze wijziging doorvoeren.",
+      "q5": "Mijn sessie verloopt steeds",
+      "a5": "Sessies worden automatisch op de achtergrond vernieuwd. Als u vaak wordt uitgelogd, controleer dan of uw browser cookies niet blokkeert of opslag niet wist.",
+      "q6": "Hoe worden mijn gegevens opgeslagen en beveiligd?",
+      "a6": "Alle gegevens worden opgeslagen in versleutelde databases met beveiliging op rijniveau. Elke gebruiker heeft alleen toegang tot eigen gegevens en gegevens gedeeld binnen de organisatie. Wij delen uw gegevens niet met derden."
+    },
+    "protein": {
+      "title": "Eiwitvoorspelling",
+      "desc": "Voorspelling van 3D-eiwitstructuren uit aminozuursequenties met AlphaFold-gebaseerde modellen.",
+      "q1": "Mijn voorspellingstaak zit vast in 'Wachtrij' status",
+      "a1": "Taken worden op volgorde verwerkt. Tijdens piekgebruik kunnen wachttijden toenemen. Als een taak langer dan 30 minuten in de wachtrij staat, probeer dan te annuleren en opnieuw in te dienen.",
+      "q2": "Welke sequentieformaten worden ondersteund?",
+      "a2": "Voer een onbewerkte aminozuursequentie in met éénlettercodes (bijv. MKTLLILAVL...). FASTA-headers worden automatisch verwijderd. Sequenties moeten tussen 10 en 2.700 residuen zijn.",
+      "q3": "De pLDDT-score is erg laag",
+      "a3": "Een lage pLDDT-score (< 50) geeft aan dat het model weinig vertrouwen heeft in de voorspelde structuur. Dit komt vaak voor bij intrinsiek ongeordende regio's of zeer korte peptiden.",
+      "q4": "Kan ik multiketencomplexen voorspellen?",
+      "a4": "Momenteel worden enkelketen-voorspellingen ondersteund. Voor multiketen- of eiwit-eiwitinteracties kunt u het Moleculaire Docking-tool gebruiken.",
+      "q5": "Mijn taak is mislukt met een fout",
+      "a5": "Veelvoorkomende oorzaken: ongeldige tekens in de sequentie, sequentie te lang (>2.700 residuen), of onvoldoende credits. Controleer de foutmelding in de taakdetails."
+    },
+    "docking": {
+      "title": "Moleculaire Docking",
+      "desc": "Simulatie van hoe kleine moleculen (liganden) binden aan eiwitdoelen met AutoDock Vina.",
+      "q1": "Welke bestandsformaten worden ondersteund voor receptor/ligand upload?",
+      "a1": "Receptoren: PDB- of PDBQT-formaat. Liganden: SDF, MOL2 of SMILES-strings. U kunt ook liganden zoeken via de ingebouwde PubChem-integratie.",
+      "q2": "De docking-score lijkt onredelijk",
+      "a2": "Docking-scores zijn geschatte bindingsenergieën (kcal/mol). Negatiever = sterkere voorspelde binding. Scores boven -4,0 duiden op zwakke binding.",
+      "q3": "Hoe stel ik de bindingsplaats in?",
+      "a3": "Gebruik 'Automatische pocketdetectie' om het algoritme de meest waarschijnlijke bindingsplaats te laten vinden, of specificeer coördinaten handmatig.",
+      "q4": "Batch-dockingtaken verlopen",
+      "a4": "Grote batchtaken (>50 liganden) kunnen veel tijd kosten. Verdeel grote batches in kleinere groepen van 20-30 liganden.",
+      "q5": "Kan ik docking-poses visualiseren?",
+      "a5": "Ja — klik op een voltooide taak om de best scorende poses te bekijken in de ingebouwde 3D-viewer. U kunt poses ook exporteren."
+    },
+    "synbio": {
+      "title": "SynBio-ontwerp",
+      "desc": "Ontwerp en validatie van synthetische DNA/RNA-constructen met codonoptimalisatie en annotatie.",
+      "q1": "Wat is codonoptimalisatie?",
+      "a1": "Codonoptimalisatie past de DNA-sequentie aan om codons te gebruiken die de voorkeur hebben van uw doelorganisme (bijv. E. coli, gist, CHO-cellen), waardoor de expressieniveaus verbeteren.",
+      "q2": "Mijn GC-gehalte wordt als problematisch gemarkeerd",
+      "a2": "Ideaal GC-gehalte ligt doorgaans tussen 40-60%. Extreem GC-gehalte kan problemen veroorzaken bij DNA-synthese, PCR-amplificatie en expressie.",
+      "q3": "Welke assemblage methoden worden ondersteund?",
+      "a3": "Gibson Assembly, Golden Gate, restrictieklonering en overlap-extensie-PCR. Het tool genereert passende overhangen en valideert compatibiliteit.",
+      "q4": "De CAI-score is laag na optimalisatie",
+      "a4": "Een Codon Adaptatie Index (CAI) onder 0,7 suggereert suboptimaal codongebruik. Probeer een ander optimalisatieorganisme.",
+      "q5": "Kan ik kenmerken op mijn construct annoteren?",
+      "a5": "Ja — het ontwerptool detecteert automatisch veelvoorkomende kenmerken (promotoren, RBS, terminatoren, resistentiemarkers). U kunt ook aangepaste annotaties toevoegen."
+    },
+    "crispr": {
+      "title": "CRISPR-laboratorium",
+      "desc": "Ontwerp van gids-RNA's, analyse van off-target-effecten en beheer van genbewerkkingsexperimenten.",
+      "q1": "Hoe worden off-target-sites berekend?",
+      "a1": "Off-target-analyse zoekt naar genomische locaties met hoge gelijkenis met uw gidssequentie plus PAM. Elk potentieel off-target wordt gescoord op basis van het aantal en de positie van mismatches.",
+      "q2": "Welke Cas-varianten worden ondersteund?",
+      "a2": "SpCas9 (NGG PAM), SaCas9 (NNGRRT PAM), Cas12a/Cpf1 (TTTV PAM) en gemodificeerde varianten zoals xCas9.",
+      "q3": "Mijn gids heeft lage efficiëntie maar hoge specificiteit",
+      "a3": "Dit is een veelvoorkomende afweging. Gidsen nabij het 5'-uiteinde van genen of in open chromatineregio's hebben doorgaans hogere efficiëntie.",
+      "q4": "Kan ik meerdere experimenten volgen?",
+      "a4": "Ja — maak afzonderlijke experimenten aan voor elk doelgen of project. Elk experiment behoudt eigen gidsontwerpen, bewerkingslogboeken en versiegeschiedenis.",
+      "q5": "Hoe exporteer ik mijn gidsontwerpen?",
+      "a5": "Gidssequenties, PAM-sites en off-target-resultaten kunnen direct vanuit de interface worden gekopieerd."
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "desc": "AI-gestuurde monitoring en optimalisatie voor celkweekexperimenten.",
+      "q1": "Welke gegevens moet ik loggen voor de beste AI-voorspellingen?",
+      "a1": "Log zo veel parameters als mogelijk: confluentie %, viabiliteit %, pH, glucoseniveau, lactaatniveau, celtellingen en morfologienotities.",
+      "q2": "De AI-aanbeveling lijkt onjuist",
+      "a2": "AI-analyses zijn gebaseerd op uw gegevens en algemene best practices voor celkweek. Ze moeten als startpunt dienen, niet als definitief protocol.",
+      "q3": "Welke cellijnen worden ondersteund?",
+      "a3": "Elke adherente of suspensiecellijn kan worden gevolgd. Veelgebruikte voorinstellingen zijn HEK293, CHO, HeLa en Jurkat.",
+      "q4": "Hoe vaak moet ik kweekgegevens loggen?",
+      "a4": "Voor de beste resultaten logt u gegevens bij elke passage en bij significante veranderingen. Dagelijkse logging maakt trendanalyse mogelijk.",
+      "q5": "Elke AI-analyse kost credits — hoeveel?",
+      "a5": "Standaard AI-analyses kosten 3 credits per keer. De kosten worden voor bevestiging getoond. Complexere analyses kunnen meer kosten."
+    },
+    "viewer": {
+      "title": "3D-viewer",
+      "desc": "Interactieve moleculaire visualisatie voor PDB-structuren met annotatie-ondersteuning.",
+      "q1": "Hoe laad ik een structuur?",
+      "a1": "Voer een PDB-ID in (bijv. '1CRN', '6LU7') in het zoekveld om direct op te halen uit de RCSB Protein Data Bank.",
+      "q2": "De viewer is leeg of toont een zwart scherm",
+      "a2": "De 3D-viewer vereist WebGL-ondersteuning. Zorg ervoor dat hardwareversnelling is ingeschakeld in uw browserinstellingen.",
+      "q3": "Kan ik de visualisatiestijl wijzigen?",
+      "a3": "Ja — schakel tussen cartoon-, staaf-, bol- en oppervlakteweergaven. U kunt ook kleuren op keten, secundaire structuur of B-factor/pLDDT-score.",
+      "q4": "Hoe sla ik notities op over een structuur?",
+      "a4": "Gebruik het notitiepaneel aan de rechterkant van de viewer. Notities worden per PDB-ID opgeslagen en blijven behouden tussen sessies.",
+      "q5": "Kan ik twee structuren naast elkaar vergelijken?",
+      "a5": "Momenteel toont de viewer één structuur tegelijk. Om te vergelijken, opent u meerdere browsertabbladen."
+    }
+  },
+  "viewer3dPage": {
+    "tabs": {
+      "info": "Info",
+      "analysis": "Analyse",
+      "docking": "Docking",
+      "mutate": "Mutatie",
+      "align": "Uitlijning",
+      "pins": "Pins",
+      "ai": "AI",
+      "notes": "Notities"
+    },
+    "loadStructure": "Laad een structuur om te beginnen",
+    "share": "Delen",
+    "export": "Exporteren",
+    "transparentBg": "Transparante achtergrond",
+    "autoRotate": "Auto-rotatie",
+    "noStructure": "Geen structuur geladen",
+    "ai": {
+      "analysing": "Bezig met analyseren…",
+      "explain": "Leg deze structuur uit",
+      "functionPrediction": "Functievoorspelling",
+      "bindingSiteInsights": "Bindingsplaats-inzichten",
+      "stabilityAnalysis": "Stabiliteitsanalyse",
+      "drugLikenessHints": "Geneesmiddelgelijkenis-hints"
+    }
+  }
+}

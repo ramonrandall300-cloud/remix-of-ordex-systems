@@ -1,0 +1,8 @@
+{
+  "receptor": "2HYY",
+  "ligand": "CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5",
+  "exhaustiveness": 32,
+  "n_poses": 9,
+  "energy_range": 3,
+  "_comment": "ABL1 kinase (PDB: 2HYY) docked with Imatinib (Gleevec) SMILES"
+}

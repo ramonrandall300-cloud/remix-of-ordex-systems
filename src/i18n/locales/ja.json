@@ -1,0 +1,549 @@
+{
+  "nav": {
+    "features": "機能",
+    "howItWorks": "仕組み",
+    "pricing": "料金",
+    "faq": "FAQ",
+    "signIn": "ログイン",
+    "getStarted": "始める",
+    "search": "検索..."
+  },
+  "hero": {
+    "badge": "AI搭載の計算生物学",
+    "title": "で発見を加速する",
+    "subtitle": "タンパク質予測、分子ドッキング、合成生物学設計、CRISPR実験追跡、AI搭載細胞培養管理、3D分子可視化 — すべて安全なマルチテナントクラウドインフラ上で。",
+    "seeHow": "デモを見る"
+  },
+  "features": {
+    "title": "コア機能",
+    "protein": {
+      "title": "タンパク質予測",
+      "desc": "ESMFoldとAlphaFold 2による変異シミュレーション、AI解釈、バッチ送信。"
+    },
+    "docking": {
+      "title": "分子ドッキング",
+      "desc": "AutoDock Vinaに加え、AI結合解析、科学レポートエクスポート、高度なパラメータ制御。"
+    },
+    "synbio": {
+      "title": "SynBio設計",
+      "desc": "ORF検出、制限酵素解析、リアルコドン最適化、プライマー設計、コンストラクトスコアリング、GenBankエクスポート。"
+    },
+    "crispr": {
+      "title": "CRISPRラボ",
+      "desc": "ガイドRNAの設計・最適化、オフターゲット分析、バージョン比較、分析ダッシュボード、ラボレポート生成。"
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "desc": "AI搭載の成長予測、汚染アラート、培養比較、AIチャットアシスタント、ダウンロード可能なラボレポート。"
+    },
+    "viewer": {
+      "title": "3Dビューア",
+      "desc": "ドッキング可視化、変異シミュレーター、マルチ構造アライメント、配列同期、AI解釈、残基アノテーション、インタラクティブ分析チャート。"
+    }
+  },
+  "howItWorks": {
+    "title": "仕組み",
+    "step": "ステップ{{n}}",
+    "upload": {
+      "title": "データをアップロード",
+      "desc": "直感的なインターフェースからタンパク質配列、リガンドライブラリ、合成生物学コンストラクトを提出してください。"
+    },
+    "configure": {
+      "title": "設定して実行",
+      "desc": "エンジン、パラメータ、処理優先度を選択。ワンクリックでジョブを起動 — インフラは私たちが管理します。"
+    },
+    "analyze": {
+      "title": "結果を分析",
+      "desc": "3D構造、ドッキングスコア、最適化メトリクスをリアルタイムで表示。エクスポートまたはチームと共有。"
+    }
+  },
+  "testimonials": {
+    "title": "研究者に信頼されています"
+  },
+  "pricing": {
+    "title": "料金プラン",
+    "subtitle": "あらゆるチームサイズに対応したシンプルで透明な料金体系。",
+    "mostPopular": "最も人気",
+    "free": {
+      "name": "無料",
+      "description": "無料で始める"
+    },
+    "starter": {
+      "name": "スターター",
+      "description": "個人研究者向け"
+    },
+    "professional": {
+      "name": "プロフェッショナル",
+      "description": "研究チーム向け"
+    },
+    "elite": {
+      "name": "エリート",
+      "description": "大規模機関向け"
+    },
+    "perMonth": "/月"
+  },
+  "comparison": {
+    "title": "なぜORDEXを選ぶのか？",
+    "subtitle": "主要な計算生物学プラットフォームとORDEXを比較してみましょう。",
+    "feature": "機能",
+    "categories": {
+      "access": "アクセスと価格",
+      "capabilities": "機能",
+      "collaboration": "コラボレーション",
+      "usability": "使いやすさ",
+      "advancedTools": "高度な科学ツール",
+      "viewer3dAdvanced": "3Dビューア & 分析"
+    },
+    "rows": {
+      "cloudBased": "完全クラウドベース",
+      "noInstall": "インストール不要",
+      "freeTier": "無料プランあり",
+      "creditPricing": "従量課金クレジット",
+      "proteinPrediction": "タンパク質構造予測",
+      "molecularDocking": "分子ドッキング",
+      "synbioDesign": "合成生物学設計",
+      "crisprTracking": "CRISPR実験追跡",
+      "cellCultureAI": "AI細胞培養管理",
+      "viewer3d": "3D分子ビューワー",
+      "multiTenant": "マルチテナント組織",
+      "teamRoles": "ロールベースのチームアクセス",
+      "realtimeJobs": "リアルタイムジョブ監視",
+      "auditLogs": "監査ログ",
+      "multiLanguage": "多言語サポート",
+      "batchJobs": "バッチジョブ送信",
+      "apiAccess": "APIアクセス",
+      "aiInterpretation": "AI結果解釈",
+      "restrictionAnalysis": "制限酵素解析",
+      "codonOptimization": "リアルコドン最適化(CAI)",
+      "primerDesign": "プライマー設計(Tm/GC)",
+      "genbankExport": "GenBank(.gb)エクスポート",
+      "scientificReport": "科学レポートエクスポート",
+      "dockingParams": "高度なドッキングパラメータ",
+      "constructScoring": "コンストラクト品質スコア",
+      "mutationSimulator": "変異シミュレーター",
+      "orfFinder": "ORF検出と翻訳",
+      "structureAnnotations": "構造アノテーション＆メモ",
+      "multiStructureAlign": "マルチ構造アラインメント",
+      "dockingVisualization": "ドッキングポーズ可視化",
+      "aiStructureExplain": "AI構造説明",
+      "sequenceViewer": "統合シーケンスビューア",
+      "analysisCharts": "RMSD/SASA分析チャート",
+      "seatManagement": "シートごとの課金＆管理",
+      "notifications": "アプリ内通知",
+      "guideDesigner": "CRISPRガイドRNAデザイナー",
+      "offTargetAnalysis": "オフターゲットリスク分析",
+      "plasmidDesigner": "ビジュアルプラスミドマップデザイナー"
+    },
+    "legendFull": "完全対応",
+    "legendPartial": "部分的 / 制限あり",
+    "legendNone": "非対応"
+  },
+  "faqSection": {
+    "title": "よくある質問"
+  },
+  "footer": {
+    "tagline": "現代の研究チームのためのAI搭載計算生物学。",
+    "product": "製品",
+    "company": "会社情報",
+    "aboutUs": "会社概要",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "rights": "© {{year}} ORDEX Systems. 全著作権所有。"
+  },
+  "auth": {
+    "signInTitle": "アカウントにログイン",
+    "signUpTitle": "新しいアカウントを作成",
+    "resetTitle": "パスワードをリセット",
+    "fullName": "氏名",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "forgotPassword": "パスワードを忘れた場合",
+    "signInBtn": "ログイン",
+    "signUpBtn": "アカウント作成",
+    "resetBtn": "リセットリンクを送信",
+    "pleaseWait": "お待ちください...",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "hasAccount": "すでにアカウントをお持ちですか？",
+    "signUp": "新規登録",
+    "backToSignIn": "ログインに戻る",
+    "backToHome": "ホームに戻る"
+  },
+  "sidebar": {
+    "dashboard": "ダッシュボード",
+    "workflows": "ワークフロー",
+    "proteinPrediction": "タンパク質予測",
+    "molecularDocking": "分子ドッキング",
+    "synbioDesign": "SynBio設計",
+    "crisprLab": "CRISPRラボ",
+    "cellcultureAi": "CellCulture AI",
+    "viewer3d": "3Dビューア",
+    "projects": "プロジェクト",
+    "billing": "請求と使用状況",
+    "team": "チーム",
+    "settings": "設定",
+    "help": "ヘルプとサポート",
+    "freePlan": "無料プラン",
+    "plan": "{{tier}}プラン"
+  },
+  "dashboard": {
+    "welcome": "おかえりなさい、{{name}}",
+    "subtitle": "計算ワークフローとシステムステータスの概要",
+    "creditsBalance": "クレジット残高",
+    "activeJobs": "アクティブなジョブ",
+    "completed": "完了",
+    "designs": "デザイン",
+    "totalItems": "合計{{count}}件",
+    "synbioDesigns": "SynBioデザイン",
+    "buyCredits": "クレジット購入",
+    "view": "表示",
+    "quickSubmit": "クイック送信",
+    "protein": "タンパク質",
+    "docking": "ドッキング",
+    "synbio": "SynBio",
+    "submit": "送信",
+    "running": "実行中...",
+    "recentJobs": "最近のジョブ",
+    "jobs": "{{count}}件のジョブ",
+    "noJobs": "まだジョブがありません。上のクイック送信を使うか、ワークフローページに移動してください。",
+    "id": "ID",
+    "type": "タイプ",
+    "name": "名前",
+    "status": "ステータス",
+    "credits": "クレジット",
+    "date": "日付",
+    "activityFeed": "アクティビティフィード",
+    "noActivity": "最近のアクティビティなし",
+    "firstJob": "最初のジョブを送信して開始しましょう",
+    "workflowSummary": "ワークフロー概要",
+    "proteinJobs": "タンパク質ジョブ",
+    "dockingJobs": "ドッキングジョブ",
+    "active": "アクティブ",
+    "recentUsage": "最近の使用状況",
+    "noUsage": "使用ログはまだありません",
+    "systemStatus": "システムステータス",
+    "coreServices": "コアサービス",
+    "jobWorker": "ジョブワーカー",
+    "edgeCompute": "エッジコンピュート",
+    "storage": "ストレージ",
+    "proteinStatus": "タンパク質予測 {{status}}",
+    "dockingStatus": "ドッキングジョブ {{status}}"
+  },
+  "topbar": {
+    "signedOut": "ログアウトしました",
+    "credits": "クレジット残高"
+  },
+  "settings": {
+    "title": "設定",
+    "subtitle": "アカウント、ワークスペース、設定を管理",
+    "profile": "プロフィール",
+    "workspace": "ワークスペース",
+    "profileSettings": "プロフィール設定",
+    "fullName": "氏名",
+    "timeZone": "タイムゾーン",
+    "emailAddress": "メールアドレス",
+    "confidenceScores": "タンパク質信頼度スコアを表示",
+    "skipCreditPreview": "ジョブ前のクレジットコスト確認をスキップ",
+    "skipCreditDesc": "有効にすると、ワークフローページでクレジットコストの概要が非表示になります。ジョブは通常通りクレジットを消費します。",
+    "saveProfile": "プロフィールを保存",
+    "saving": "保存中...",
+    "reset": "リセット",
+    "workspaceConfig": "ワークスペース設定",
+    "workspaceName": "ワークスペース名",
+    "orgId": "組織ID",
+    "saveWorkspace": "ワークスペースを保存",
+    "saveChanges": "変更を保存",
+    "resetDefaults": "デフォルトに戻す"
+  },
+  "projects": {
+    "title": "プロジェクトとファイル",
+    "subtitle": "計算生物学プロジェクトとファイルを管理",
+    "newProject": "新規プロジェクト",
+    "searchProjects": "プロジェクトを検索...",
+    "noProjects": "まだプロジェクトがありません",
+    "selectProject": "プロジェクトを選択",
+    "selectProjectDesc": "左側からプロジェクトを選択してファイルを表示",
+    "upload": "アップロード",
+    "deleteProject": "プロジェクトを削除",
+    "noFiles": "まだファイルがありません — アップロードして開始しましょう",
+    "createNewProject": "新規プロジェクトを作成",
+    "projectName": "プロジェクト名",
+    "projectNamePlaceholder": "例：CRISPR遺伝子編集",
+    "descriptionOptional": "説明（任意）",
+    "descriptionPlaceholder": "簡単なプロジェクトの説明",
+    "creating": "作成中...",
+    "create": "作成"
+  },
+  "billing": {
+    "title": "請求と使用状況",
+    "subtitle": "クレジットの監視、計算パックの購入、使用履歴の確認",
+    "noActiveSub": "アクティブなサブスクリプションなし",
+    "subscribeBelow": "以下からサブスクライブしてクレジットを増やす",
+    "renews": "{{date}}に更新",
+    "extraSeats": "追加シート{{count}}名 × ${{price}}/月 = ${{total}}/月",
+    "manageSubscription": "サブスクリプション管理",
+    "opening": "開いています…",
+    "refresh": "更新",
+    "creditsBalance": "クレジット残高",
+    "organization": "組織",
+    "totalUsed": "合計使用量",
+    "transactions": "{{count}}件の取引",
+    "proteinJobs": "タンパク質ジョブ",
+    "dockingJobs": "ドッキングジョブ",
+    "credits": "クレジット",
+    "buyCredits": "クレジット購入",
+    "buyCreditsDesc": "一度限りの購入 — 支払い後すぐにクレジットが追加されます",
+    "bestValue": "最もお得",
+    "perCredit": "クレジットあたり",
+    "buyNow": "今すぐ購入",
+    "redirecting": "リダイレクト中...",
+    "creditUsageTrend": "クレジット使用傾向",
+    "noUsageData": "まだ使用データがありません",
+    "costBreakdown": "コスト内訳",
+    "proteinPrediction": "タンパク質予測",
+    "molecularDocking": "分子ドッキング",
+    "synbioDesign": "SynBio設計",
+    "noUsage": "使用なし",
+    "usageHistory": "使用履歴",
+    "exportCsv": "CSVエクスポート",
+    "noUsageHistory": "まだ使用履歴がありません。ジョブを送信してアクティビティを確認してください。",
+    "description": "説明",
+    "date": "日付"
+  },
+  "team": {
+    "title": "チーム",
+    "subtitle": "組織のメンバーと招待を管理します。",
+    "inviteMember": "メンバーを招待",
+    "emailPlaceholder": "colleague@university.edu",
+    "roleMember": "メンバー",
+    "roleAdmin": "管理者",
+    "sendInvite": "招待を送信",
+    "members": "メンバー",
+    "pendingInvites": "保留中の招待",
+    "removeMemberTitle": "メンバーを削除しますか？",
+    "removeMemberDesc": "このメンバーは組織から削除され、すべてのワークスペースデータへのアクセスを失います。",
+    "cancel": "キャンセル",
+    "remove": "削除"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "retry": "再試行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "back": "戻る",
+    "next": "次へ",
+    "close": "閉じる",
+    "noOrg": "組織なし"
+  },
+  "tools": {
+    "protein": {
+      "title": "タンパク質構造予測",
+      "subtitle": "ESMFold & AlphaFold 2でタンパク質フォールディング予測を設定・実行",
+      "inputConfig": "入力と設定",
+      "jobQueue": "ジョブキュー",
+      "resultsInspector": "結果インスペクター",
+      "startJob": "ジョブ開始",
+      "processing": "処理中...",
+      "noJobs": "まだジョブがありません。上から最初の予測を送信してください。"
+    },
+    "docking": {
+      "title": "分子ドッキングラボ",
+      "subtitle": "RCSB PDB & PubChemデータを使用した実際の薬理スコアリング — ジョブあたり{{cost}}クレジット",
+      "inputConfig": "入力と設定",
+      "startDocking": "ドッキング開始（{{cost}}クレジット）",
+      "computing": "計算中...",
+      "noDockingJobs": "まだドッキングジョブがありません。上から最初のジョブを送信してください。"
+    },
+    "synbio": {
+      "title": "合成生物学設計",
+      "subtitle": "合成生物学アプリケーション向けDNAコンストラクトの設計、可視化、検証",
+      "sequenceTools": "シーケンスツール",
+      "saveDesign": "デザインを保存",
+      "exportConstruct": "コンストラクトをエクスポート"
+    },
+    "crispr": {
+      "title": "CRISPR実験ラボ",
+      "subtitle": "編集ライフサイクル全体にわたるすべての遺伝子編集を監視、バージョン管理、監査",
+      "experiments": "実験",
+      "optimizer": "オプティマイザー",
+      "analytics": "分析",
+      "audit": "監査",
+      "report": "レポート",
+      "downloadLabReport": "ラボレポートをダウンロード",
+      "riskHigh": "高リスク",
+      "riskMedium": "中リスク",
+      "riskLow": "低リスク",
+      "optimizeGuide": "ガイドを最適化",
+      "efficiencyHistogram": "効率ヒストグラム",
+      "casDistribution": "Casバリアント分布",
+      "pamPerformance": "PAMパフォーマンス"
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "subtitle": "AI搭載細胞培養管理 — 成長予測、汚染検出、条件最適化",
+      "newCulture": "新しい培養",
+      "yourCultures": "あなたの培養",
+      "aiChat": "AIチャット",
+      "compare": "比較",
+      "report": "レポート",
+      "growthCharts": "成長チャート",
+      "alerts": "アラート",
+      "passageCulture": "培養を継代",
+      "markContaminated": "汚染マーク",
+      "runAiAnalysis": "AI分析を実行",
+      "downloadLabReport": "ラボレポートをダウンロード",
+      "analysisHistory": "分析履歴",
+      "selectCultures": "比較する培養を選択",
+      "comparisonTable": "パラメータ比較",
+      "growthComparison": "成長比較",
+      "viabilityComparison": "生存率比較",
+      "hoursFromStart": "開始からの時間",
+      "cultureReport": "培養ラボレポート",
+      "noLogsYet": "観察ログはまだありません"
+    },
+    "viewer": {
+      "title": "3D構造ビューア",
+      "subtitle": "実際のPDBデータによるインタラクティブな分子可視化"
+    },
+    "help": {
+      "title": "ヘルプとサポート",
+      "subtitle": "各ツールに関するよくある質問への回答と、ORDEX Systemsを最大限に活用する方法をご覧ください。",
+      "general": "一般",
+      "generalDesc": "アカウント、請求、プラットフォーム全般の質問。",
+      "needHelp": "まだお困りですか？",
+      "needHelpDesc": "お探しの答えが見つからない場合は、サポートチームにお問い合わせください。通常、営業日24時間以内にご返答いたします。"
+    },
+    "billing": {
+      "title": "請求と使用状況"
+    }
+  },
+  "help": {
+    "general": {
+      "q1": "クレジットはどのように機能しますか？",
+      "a1": "クレジットは計算ジョブ（予測、ドッキング、AI分析）の実行時に消費されます。各ツールはジョブ送信前に推定クレジットコストを表示します。クレジットは組織全体で共有され、請求＆使用量ページから購入できます。",
+      "q2": "「クレジット不足」エラーが出ます",
+      "a2": "組織のクレジット残高が要求されたジョブに対して不足しています。請求＆使用量から追加クレジットを購入するか、組織管理者に依頼してください。",
+      "q3": "チームメンバーを招待するには？",
+      "a3": "チームページに移動し、招待フォームを使用してメールで招待を送信します。招待されたユーザーは組織に参加するリンクを受け取ります。管理者のみが新しいメンバーを招待できます。",
+      "q4": "組織/ワークスペース名を変更できますか？",
+      "a4": "はい — 設定 → ワークスペースに移動してワークスペース名を更新してください。組織管理者のみがこの変更を行えます。",
+      "q5": "セッションが頻繁に期限切れになります",
+      "a5": "セッションはバックグラウンドで自動的に更新されます。頻繁にログアウトされる場合は、ブラウザがCookieをブロックしたりストレージをクリアしたりしていないか確認してください。",
+      "q6": "データはどのように保存・保護されていますか？",
+      "a6": "すべてのデータは行レベルセキュリティを備えた暗号化されたデータベースに保存されます。各ユーザーは自分のデータと組織内で共有されたデータにのみアクセスできます。データを第三者と共有することはありません。"
+    },
+    "protein": {
+      "title": "タンパク質予測",
+      "desc": "AlphaFoldベースのモデルを使用してアミノ酸配列から3Dタンパク質構造を予測。",
+      "q1": "予測ジョブが「キュー」状態で止まっています",
+      "a1": "ジョブは順番に処理されます。ピーク時にはキュー時間が長くなる場合があります。30分以上キューに残っている場合は、キャンセルして再送信してください。",
+      "q2": "どの配列フォーマットがサポートされていますか？",
+      "a2": "一文字コードで生のアミノ酸配列を入力してください（例：MKTLLILAVL...）。FASTAヘッダーは自動的に除去されます。配列は10〜2,700残基の間である必要があります。",
+      "q3": "pLDDTスコアが非常に低いです",
+      "a3": "pLDDTスコアが低い（<50）場合、モデルが予測構造に低い信頼度を持っていることを示します。本質的に無秩序な領域や非常に短いペプチドで起こりがちです。",
+      "q4": "マルチチェーン複合体を予測できますか？",
+      "a4": "現在、単鎖予測がサポートされています。マルチチェーンまたはタンパク質-タンパク質相互作用には、個別に予測した構造で分子ドッキングツールの使用を検討してください。",
+      "q5": "ジョブがエラーで失敗しました",
+      "a5": "一般的な原因：配列内の無効な文字、配列が長すぎる（>2,700残基）、またはクレジット不足。ジョブ詳細のエラーメッセージを確認してください。"
+    },
+    "docking": {
+      "title": "分子ドッキング",
+      "desc": "AutoDock Vinaを使用した小分子（リガンド）のタンパク質標的への結合シミュレーション。",
+      "q1": "レセプター/リガンドアップロードでサポートされるファイル形式は？",
+      "a1": "レセプター：PDBまたはPDBQT形式。リガンド：SDF、MOL2、またはSMILES文字列。組み込みのPubChem統合でリガンドを名前で検索することもできます。",
+      "q2": "ドッキングスコアが不合理に見えます",
+      "a2": "ドッキングスコアは近似的な結合エネルギー（kcal/mol）です。よりマイナス = より強い予測結合。-4.0以上のスコアは一般的に弱い結合を示します。",
+      "q3": "結合部位の設定方法は？",
+      "a3": "「ポケット自動検出」を使用してアルゴリズムに最も可能性の高い結合部位を見つけさせるか、座標を手動で指定してください。",
+      "q4": "バッチドッキングジョブがタイムアウトします",
+      "a4": "大規模なバッチジョブ（>50リガンド）は時間がかかる場合があります。大きなバッチを20-30リガンドの小さなグループに分けてください。",
+      "q5": "ドッキングポーズを可視化できますか？",
+      "a5": "はい — 完了したジョブをクリックして、組み込み3Dビューアーでトップスコアのポーズを表示できます。ポーズをエクスポートすることもできます。"
+    },
+    "synbio": {
+      "title": "SynBio設計",
+      "desc": "コドン最適化とアノテーションを備えた合成DNA/RNAコンストラクトの設計と検証。",
+      "q1": "コドン最適化とは何ですか？",
+      "a1": "コドン最適化は、ターゲット宿主生物（例：大腸菌、酵母、CHO細胞）が好むコドンを使用するようDNA配列を調整し、タンパク質配列を変えずに発現レベルを向上させます。",
+      "q2": "GC含量が問題ありと表示されます",
+      "a2": "理想的なGC含量は通常40-60%です。極端なGC含量はDNA合成、PCR増幅、発現に問題を引き起こす可能性があります。",
+      "q3": "どのアセンブリ方法がサポートされていますか？",
+      "a3": "Gibsonアセンブリ、Golden Gate、制限酵素クローニング、オーバーラップ伸長PCR。ツールは適切なオーバーハングを生成し互換性を検証します。",
+      "q4": "最適化後にCAIスコアが低いです",
+      "a4": "コドン適応指数（CAI）が0.7未満の場合、最適でないコドン使用を示唆しています。別の最適化生物を選択してみてください。",
+      "q5": "コンストラクトに特徴をアノテーションできますか？",
+      "a5": "はい — 設計ツールは一般的な特徴（プロモーター、RBS、ターミネーター、耐性マーカー）を自動検出します。カスタムアノテーションも追加できます。"
+    },
+    "crispr": {
+      "title": "CRISPR研究室",
+      "desc": "ガイドRNAの設計、オフターゲット効果の分析、遺伝子編集実験の管理。",
+      "q1": "オフターゲットサイトはどのように計算されますか？",
+      "a1": "オフターゲット分析は、ガイド配列＋PAMと高い類似性を持つゲノム上の位置を検索します。各潜在的オフターゲットはミスマッチの数と位置に基づいてスコア付けされます。",
+      "q2": "どのCasバリアントがサポートされていますか？",
+      "a2": "SpCas9（NGG PAM）、SaCas9（NNGRRT PAM）、Cas12a/Cpf1（TTTV PAM）、xCas9などのエンジニアードバリアント。",
+      "q3": "ガイドの効率は低いが特異性は高いです",
+      "a3": "これは一般的なトレードオフです。遺伝子の5'末端付近やオープンクロマチン領域のガイドはより高い効率を持つ傾向があります。",
+      "q4": "複数の実験を追跡できますか？",
+      "a4": "はい — 各ターゲット遺伝子やプロジェクトごとに個別の実験を作成してください。各実験は独自のガイド設計、編集ログ、バージョン履歴を管理します。",
+      "q5": "ガイド設計をエクスポートするには？",
+      "a5": "ガイド配列、PAMサイト、オフターゲット結果はインターフェースから直接コピーできます。完全な実験データは詳細ビューで確認できます。"
+    },
+    "cellculture": {
+      "title": "CellCulture AI",
+      "desc": "細胞培養実験のためのAI駆動の監視と最適化。",
+      "q1": "最良のAI予測のためにどのデータを記録すべきですか？",
+      "a1": "できるだけ多くのパラメータを記録してください：コンフルエンス%、生存率%、pH、グルコースレベル、乳酸レベル、細胞数、形態メモ。",
+      "q2": "AIの推奨が間違っているようです",
+      "a2": "AI分析は提供されたデータと一般的な細胞培養のベストプラクティスに基づいています。出発点として使用し、最終的なプロトコルとしてではありません。",
+      "q3": "どの細胞株がサポートされていますか？",
+      "a3": "接着性または浮遊性のすべての細胞株を追跡できます。一般的なプリセットにはHEK293、CHO、HeLa、Jurkatが含まれます。",
+      "q4": "培養データをどのくらいの頻度で記録すべきですか？",
+      "a4": "最良の結果を得るには、各継代時と重要な変化がある時にデータを記録してください。毎日の記録によりトレンド分析が可能になります。",
+      "q5": "各AI分析にはクレジットがかかります — いくらですか？",
+      "a5": "標準AI分析は1回あたり3クレジットです。コストは確認前に表示されます。より複雑な分析はより多くかかる場合があります。"
+    },
+    "viewer": {
+      "title": "3Dビューアー",
+      "desc": "アノテーションサポート付きPDB構造のインタラクティブな分子可視化。",
+      "q1": "構造をロードするには？",
+      "a1": "検索フィールドにPDB ID（例：'1CRN'、'6LU7'）を入力して、RCSB Protein Data Bankから直接取得します。",
+      "q2": "ビューアーが空白または黒い画面です",
+      "a2": "3DビューアーにはWebGLサポートが必要です。ブラウザ設定でハードウェアアクセラレーションが有効になっていることを確認してください。",
+      "q3": "可視化スタイルを変更できますか？",
+      "a3": "はい — カートゥーン、スティック、球体、サーフェス表現を切り替えられます。チェーン、二次構造、B因子/pLDDTスコアで色付けすることもできます。",
+      "q4": "構造にメモを保存するには？",
+      "a4": "ビューアーの右側にあるメモパネルを使用してください。メモはPDB IDごとに保存され、セッション間で保持されます。",
+      "q5": "2つの構造を並べて比較できますか？",
+      "a5": "現在、ビューアーは一度に1つの構造を表示します。比較するには、異なるPDB IDで複数のブラウザタブを開いてください。"
+    }
+  },
+  "viewer3dPage": {
+    "tabs": {
+      "info": "情報",
+      "analysis": "分析",
+      "docking": "ドッキング",
+      "mutate": "変異",
+      "align": "整列",
+      "pins": "ピン",
+      "ai": "AI",
+      "notes": "ノート"
+    },
+    "loadStructure": "構造をロードして開始",
+    "share": "共有",
+    "export": "エクスポート",
+    "transparentBg": "透明背景",
+    "autoRotate": "自動回転",
+    "noStructure": "構造が読み込まれていません",
+    "ai": {
+      "analysing": "分析中…",
+      "explain": "この構造を説明",
+      "functionPrediction": "機能予測",
+      "bindingSiteInsights": "結合部位の洞察",
+      "stabilityAnalysis": "安定性分析",
+      "drugLikenessHints": "薬物類似性ヒント"
+    }
+  }
+}

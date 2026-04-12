@@ -1,0 +1,1 @@
+DELETE FROM org_invites WHERE email = 'ramonrandall100@yahoo.com';
