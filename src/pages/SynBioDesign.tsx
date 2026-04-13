@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import PlasmidDesigner from "@/components/synbio/PlasmidDesigner";
 import HostOrganismInput from "@/components/synbio/HostOrganismInput";
