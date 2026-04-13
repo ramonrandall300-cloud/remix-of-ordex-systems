@@ -148,10 +148,11 @@ export default function SettingsPage() {
   );
 }
 
-function ProfileSection({ t, fullName, setFullName, email, timezone, setTimezone, showConfidence, setShowConfidence, autoApproveCredits, setAutoApproveCredits, saving, onSave, onReset }: any) {
+function ProfileSection({ t, fullName, setFullName, email, timezone, setTimezone, showConfidence, setShowConfidence, autoApproveCredits, setAutoApproveCredits, saving, onSave, onReset, user, onAvatarUpdated }: any) {
   return (
     <div className="glass-card p-5 space-y-4">
       <h2 className="font-semibold text-foreground">👤 {t("settings.profileSettings")}</h2>
+      <ProfilePictureUpload user={user} onUpdated={onAvatarUpdated} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="text-xs text-muted-foreground block mb-1">{t("settings.fullName")}</label>
