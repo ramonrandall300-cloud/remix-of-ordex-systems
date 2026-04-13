@@ -1,5 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/hooks/useAuth";
+import { useSynBioDesigns, useCreateSynBioDesign } from "@/hooks/useSynBioDesigns";
 import PlasmidDesigner from "@/components/synbio/PlasmidDesigner";
 import HostOrganismInput from "@/components/synbio/HostOrganismInput";
 import SequenceToolbar from "@/components/synbio/SequenceToolbar";
@@ -62,9 +64,12 @@ function ValidationRow({ label, status, detail }: { label: string; status: strin
 
 export default function SynBioDesign() {
   const { orgId } = useOrgContext();
+  const { user } = useAuth();
   const { data: creditData } = useCredits(orgId);
   const creditBalance = creditData?.balance ?? 0;
   const { t } = useTranslation();
+  const { data: dbDesigns = [], refetch: refetchDesigns } = useSynBioDesigns();
+  const createDesign = useCreateSynBioDesign();
   const [seqTab, setSeqTab] = useState("DNA");
   const [seqName, setSeqName] = useState("pET245");
   const [sequence, setSequenceRaw] = useState(() => {
@@ -78,7 +83,6 @@ export default function SynBioDesign() {
   const [assemblyType, setAssemblyType] = useState("Golden Gate");
   const [hostOrganism, setHostOrganism] = useState("CHO cells");
   const [codonOrg, setCodonOrg] = useState("S. cerevisiae");
-  const [savedDesigns, setSavedDesigns] = useState([{ name: "pET245", type: "DNA" }]);
   const [validationRun, setValidationRun] = useState(false);
   const [validationResults, setValidationResults] = useState<ValidationResult[]>([]);
   const [exported, setExported] = useState(false);
@@ -124,12 +128,31 @@ export default function SynBioDesign() {
 
   // ── Handlers ───────────────────────────────────────────────────────
   const handleSave = useCallback(() => {
-    if (!savedDesigns.find(d => d.name === seqName)) {
-      setSavedDesigns(prev => [...prev, { name: seqName, type: seqTab }]);
-    }
-    setSaveFlash(true);
-    setTimeout(() => setSaveFlash(false), 900);
-  }, [seqName, seqTab, savedDesigns]);
+    if (!user) { toast.error("Please sign in to save designs"); return; }
+    if (!sequence.trim()) { toast.error("No sequence to save"); return; }
+    createDesign.mutate({
+      user_id: user.id,
+      name: seqName,
+      sequence,
+      sequence_type: seqTab,
+      plasmid_type: "circular",
+      assembly_method: assemblyType,
+      host_organism: hostOrganism,
+      optimization_organism: codonOrg,
+      gc_content: gc,
+      cai_score: cai,
+      feasibility_score: constructScore.overall,
+      validation_result: validationResults as any,
+    }, {
+      onSuccess: () => {
+        toast.success("Design saved");
+        refetchDesigns();
+        setSaveFlash(true);
+        setTimeout(() => setSaveFlash(false), 900);
+      },
+      onError: (e) => toast.error(e.message),
+    });
+  }, [user, seqName, seqTab, sequence, assemblyType, hostOrganism, codonOrg, gc, cai, constructScore, validationResults, createDesign, refetchDesigns]);
 
   const handleRunValidation = useCallback(() => {
     setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
@@ -258,12 +281,12 @@ export default function SynBioDesign() {
               <button className="w-11 bg-secondary border border-border rounded-lg text-lg text-muted-foreground hover:text-foreground transition-colors">↩</button>
             </div>
 
-            {savedDesigns.length > 0 && (
+            {dbDesigns.length > 0 && (
               <div className="mt-4">
-                <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1.5">Saved Designs ({savedDesigns.length})</label>
-                {savedDesigns.map((d, i) => (
-                  <div key={i} className="bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs">
-                    {d.name} • {d.type}
+                <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1.5">Saved Designs ({dbDesigns.length})</label>
+                {dbDesigns.map((d) => (
+                  <div key={d.id} className="bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs">
+                    {d.name} • {d.sequence_type}
                   </div>
                 ))}
               </div>
