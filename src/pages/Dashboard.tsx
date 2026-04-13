@@ -39,6 +39,20 @@ export default function Dashboard() {
   ], [refetchProtein, refetchDocking, refetchCredits]);
   useOrgRealtime(orgId, realtimeSubs);
 
+  // synbio_designs has no org_id, so subscribe directly scoped to user
+  useEffect(() => {
+    if (!user) return;
+    const channel = supabase
+      .channel("synbio-designs-dashboard")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "synbio_designs", filter: `user_id=eq.${user.id}` },
+        () => refetchSynbio()
+      )
+      .subscribe();
+    return () => { supabase.removeChannel(channel); };
+  }, [user, refetchSynbio]);
+
   const activeJobs = [...proteinJobs, ...dockingJobs].filter(j => j.status === "running" || j.status === "queued").length;
   const completedJobs = [...proteinJobs, ...dockingJobs].filter(j => j.status === "completed").length;
   const totalItems = proteinJobs.length + dockingJobs.length + synbioDesigns.length;
