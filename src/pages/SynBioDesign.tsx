@@ -96,6 +96,22 @@ export default function SynBioDesign() {
   const restrictionSites = useMemo(() => analyzeRestrictionSites(sequence), [sequence]);
   const orfs = useMemo(() => findAllORFs(sequence, 20), [sequence]);
 
+  // ── Auto-validation on sequence/settings change (debounced) ────────
+  const autoValidateTimer = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => {
+    if (!sequence.trim()) {
+      setValidationResults([]);
+      setValidationRun(false);
+      return;
+    }
+    clearTimeout(autoValidateTimer.current);
+    autoValidateTimer.current = setTimeout(() => {
+      setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
+      setValidationRun(true);
+    }, 400);
+    return () => clearTimeout(autoValidateTimer.current);
+  }, [sequence, assemblyType, codonOrg]);
+
   const validationPasses = useMemo(
     () => validationResults.filter(r => r.status === "pass").length,
     [validationResults]
