@@ -116,10 +116,11 @@ export default function SettingsPage() {
               t={t}
               fullName={fullName} setFullName={setFullName}
               email={email} timezone={timezone} setTimezone={setTimezone}
-              
               showConfidence={showConfidence} setShowConfidence={setShowConfidence}
               autoApproveCredits={autoApproveCredits} setAutoApproveCredits={setAutoApproveCredits}
               saving={saving} onSave={handleSaveProfile} onReset={handleReset}
+              user={user}
+              onAvatarUpdated={() => supabase.auth.getSession()}
             />
           )}
 
