@@ -141,7 +141,7 @@ export default function SynBioDesign() {
       optimization_organism: codonOrg,
       gc_content: gc,
       cai_score: cai,
-      feasibility_score: constructScore,
+      feasibility_score: constructScore.total,
       validation_result: validationResults as any,
     }, {
       onSuccess: () => {
@@ -281,12 +281,12 @@ export default function SynBioDesign() {
               <button className="w-11 bg-secondary border border-border rounded-lg text-lg text-muted-foreground hover:text-foreground transition-colors">↩</button>
             </div>
 
-            {savedDesigns.length > 0 && (
+            {dbDesigns.length > 0 && (
               <div className="mt-4">
-                <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1.5">Saved Designs ({savedDesigns.length})</label>
-                {savedDesigns.map((d, i) => (
-                  <div key={i} className="bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs">
-                    {d.name} • {d.type}
+                <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1.5">Saved Designs ({dbDesigns.length})</label>
+                {dbDesigns.map((d) => (
+                  <div key={d.id} className="bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs">
+                    {d.name} • {d.sequence_type}
                   </div>
                 ))}
               </div>
