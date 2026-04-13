@@ -128,12 +128,31 @@ export default function SynBioDesign() {
 
   // ── Handlers ───────────────────────────────────────────────────────
   const handleSave = useCallback(() => {
-    if (!savedDesigns.find(d => d.name === seqName)) {
-      setSavedDesigns(prev => [...prev, { name: seqName, type: seqTab }]);
-    }
-    setSaveFlash(true);
-    setTimeout(() => setSaveFlash(false), 900);
-  }, [seqName, seqTab, savedDesigns]);
+    if (!user) { toast.error("Please sign in to save designs"); return; }
+    if (!sequence.trim()) { toast.error("No sequence to save"); return; }
+    createDesign.mutate({
+      user_id: user.id,
+      name: seqName,
+      sequence,
+      sequence_type: seqTab,
+      plasmid_type: "circular",
+      assembly_method: assemblyType,
+      host_organism: hostOrganism,
+      optimization_organism: codonOrg,
+      gc_content: gc,
+      cai_score: cai,
+      feasibility_score: constructScore,
+      validation_result: validationResults as any,
+    }, {
+      onSuccess: () => {
+        toast.success("Design saved");
+        refetchDesigns();
+        setSaveFlash(true);
+        setTimeout(() => setSaveFlash(false), 900);
+      },
+      onError: (e) => toast.error(e.message),
+    });
+  }, [user, seqName, seqTab, sequence, assemblyType, hostOrganism, codonOrg, gc, cai, constructScore, validationResults, createDesign, refetchDesigns]);
 
   const handleRunValidation = useCallback(() => {
     setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
