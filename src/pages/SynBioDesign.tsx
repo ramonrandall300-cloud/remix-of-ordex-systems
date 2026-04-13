@@ -64,9 +64,12 @@ function ValidationRow({ label, status, detail }: { label: string; status: strin
 
 export default function SynBioDesign() {
   const { orgId } = useOrgContext();
+  const { user } = useAuth();
   const { data: creditData } = useCredits(orgId);
   const creditBalance = creditData?.balance ?? 0;
   const { t } = useTranslation();
+  const { data: dbDesigns = [], refetch: refetchDesigns } = useSynBioDesigns();
+  const createDesign = useCreateSynBioDesign();
   const [seqTab, setSeqTab] = useState("DNA");
   const [seqName, setSeqName] = useState("pET245");
   const [sequence, setSequenceRaw] = useState(() => {
@@ -80,7 +83,6 @@ export default function SynBioDesign() {
   const [assemblyType, setAssemblyType] = useState("Golden Gate");
   const [hostOrganism, setHostOrganism] = useState("CHO cells");
   const [codonOrg, setCodonOrg] = useState("S. cerevisiae");
-  const [savedDesigns, setSavedDesigns] = useState([{ name: "pET245", type: "DNA" }]);
   const [validationRun, setValidationRun] = useState(false);
   const [validationResults, setValidationResults] = useState<ValidationResult[]>([]);
   const [exported, setExported] = useState(false);
