@@ -285,9 +285,21 @@ export default function SynBioDesign() {
               <div className="mt-4">
                 <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1.5">Saved Designs ({dbDesigns.length})</label>
                 {dbDesigns.map((d) => (
-                  <div key={d.id} className="bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs">
+                  <button
+                    key={d.id}
+                    onClick={() => {
+                      setSeqName(d.name);
+                      setSequence(d.sequence);
+                      setSeqTab(d.sequence_type);
+                      setAssemblyType(d.assembly_method);
+                      setHostOrganism(d.host_organism);
+                      setCodonOrg(d.optimization_organism);
+                      toast.success(`Loaded "${d.name}"`);
+                    }}
+                    className="w-full text-left bg-secondary border border-border rounded-md px-3 py-2 mb-1.5 text-muted-foreground text-xs hover:bg-accent hover:text-foreground transition-colors cursor-pointer"
+                  >
                     {d.name} • {d.sequence_type}
-                  </div>
+                  </button>
                 ))}
               </div>
             )}
