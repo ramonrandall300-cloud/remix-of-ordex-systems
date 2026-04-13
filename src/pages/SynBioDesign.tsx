@@ -141,7 +141,7 @@ export default function SynBioDesign() {
       optimization_organism: codonOrg,
       gc_content: gc,
       cai_score: cai,
-      feasibility_score: constructScore.total,
+      feasibility_score: constructScore.overall,
       validation_result: validationResults as any,
     }, {
       onSuccess: () => {
