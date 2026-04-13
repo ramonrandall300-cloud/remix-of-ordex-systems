@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dna, Zap, Loader2 } from "lucide-react";
+import { Dna, Zap, Loader2, Users, Plus, Minus } from "lucide-react";
 import { useLocalizedNavigate } from "@/hooks/useLocalizedNavigate";
 import { supabase } from "@/integrations/supabase/client";
 import { useOrgContext } from "@/contexts/OrgContext";
@@ -53,9 +53,21 @@ export default function ChoosePlan() {
   const navigate = useLocalizedNavigate();
   const { orgId, isLoading: orgLoading } = useOrgContext();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [seatCounts, setSeatCounts] = useState<Record<string, number>>({});
+
+  const getSeatCount = (priceId: string | null) => {
+    if (!priceId) return 1;
+    return seatCounts[priceId] ?? 1;
+  };
+
+  const updateSeats = (priceId: string, delta: number) => {
+    setSeatCounts(prev => ({
+      ...prev,
+      [priceId]: Math.max(1, (prev[priceId] ?? 1) + delta),
+    }));
+  };
 
   const handleSelect = async (plan: typeof PLANS[number]) => {
-    // Free plan — skip checkout, go straight to dashboard
     if (!plan.priceId) {
       navigate("/dashboard");
       return;
@@ -66,8 +78,9 @@ export default function ChoosePlan() {
     }
     setLoadingPlan(plan.priceId);
     try {
+      const seats = getSeatCount(plan.priceId);
       const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { orgId, priceId: plan.priceId, creditsAmount: plan.credits },
+        body: { orgId, priceId: plan.priceId, creditsAmount: plan.credits, seatCount: seats },
       });
       if (error) throw error;
       if (data?.url) {
@@ -98,49 +111,96 @@ export default function ChoosePlan() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl">
-          {PLANS.map((plan) => (
-            <button
-              key={plan.priceId}
-              onClick={() => handleSelect(plan)}
-              disabled={!!loadingPlan}
-              className={`relative flex flex-col items-start p-6 rounded-lg border text-left transition-all hover:border-primary hover:shadow-lg disabled:opacity-60 ${
-                plan.popular
-                  ? "border-primary bg-primary/5 shadow-md"
-                  : "border-border bg-card"
-              }`}
-            >
-              {plan.popular && (
-                <span className="absolute -top-2.5 left-4 bg-primary text-primary-foreground text-xs font-semibold px-2 py-0.5 rounded-full">
-                  Most Popular
-                </span>
-              )}
-              <h2 className="text-lg font-semibold text-foreground">{plan.label}</h2>
-              <div className="mt-2 mb-4">
-                <span className="text-3xl font-bold text-foreground">${plan.price}</span>
-                <span className="text-sm text-muted-foreground">/month</span>
+          {PLANS.map((plan) => {
+            const seats = getSeatCount(plan.priceId);
+            const totalPrice = plan.price + (plan.seatPrice > 0 ? plan.seatPrice * seats : 0);
+
+            return (
+              <div
+                key={plan.priceId ?? "free"}
+                className={`relative flex flex-col items-start p-6 rounded-lg border text-left transition-all hover:border-primary hover:shadow-lg ${
+                  plan.popular
+                    ? "border-primary bg-primary/5 shadow-md"
+                    : "border-border bg-card"
+                }`}
+              >
+                {plan.popular && (
+                  <span className="absolute -top-2.5 left-4 bg-primary text-primary-foreground text-xs font-semibold px-2 py-0.5 rounded-full">
+                    Most Popular
+                  </span>
+                )}
+                <h2 className="text-lg font-semibold text-foreground">{plan.label}</h2>
+                <div className="mt-2 mb-2">
+                  <span className="text-3xl font-bold text-foreground">${plan.price}</span>
+                  <span className="text-sm text-muted-foreground">/month</span>
+                </div>
+
+                {/* Seat Add-On Selector */}
                 {plan.seatPrice > 0 && (
-                  <p className="text-xs text-muted-foreground mt-1">+ ${plan.seatPrice}/seat/month</p>
+                  <div className="w-full border border-border rounded-md p-3 mb-4 bg-secondary/50">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Users className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-medium text-foreground">Team Seats</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => updateSeats(plan.priceId!, -1)}
+                          disabled={seats <= 1}
+                          className="w-6 h-6 flex items-center justify-center rounded border border-border text-muted-foreground hover:text-foreground hover:border-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                        >
+                          <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="text-sm font-bold text-foreground w-6 text-center">{seats}</span>
+                        <button
+                          type="button"
+                          onClick={() => updateSeats(plan.priceId!, 1)}
+                          className="w-6 h-6 flex items-center justify-center rounded border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                        >
+                          <Plus className="w-3 h-3" />
+                        </button>
+                      </div>
+                      <span className="text-xs text-muted-foreground">
+                        +${plan.seatPrice * seats}/mo
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-muted-foreground mt-1.5">${plan.seatPrice}/seat/month • 1 included</p>
+                  </div>
                 )}
-              </div>
-              <ul className="space-y-2 mb-6 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Zap className="w-3.5 h-3.5 text-primary shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <div className="w-full bg-primary text-primary-foreground py-2.5 rounded-md text-sm font-medium text-center">
-                {loadingPlan === plan.priceId ? (
-                  <Loader2 className="w-4 h-4 animate-spin mx-auto" />
-                ) : plan.priceId ? (
-                  "Subscribe"
-                ) : (
-                  "Get Started Free"
+
+                {/* Total */}
+                {plan.seatPrice > 0 && (
+                  <div className="w-full flex justify-between items-baseline mb-3 px-1">
+                    <span className="text-xs text-muted-foreground">Total</span>
+                    <span className="text-sm font-bold text-foreground">${totalPrice}/mo</span>
+                  </div>
                 )}
+
+                <ul className="space-y-2 mb-6 flex-1">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Zap className="w-3.5 h-3.5 text-primary shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => handleSelect(plan)}
+                  disabled={!!loadingPlan}
+                  className="w-full bg-primary text-primary-foreground py-2.5 rounded-md text-sm font-medium text-center hover:bg-primary/90 disabled:opacity-60 transition-colors"
+                >
+                  {loadingPlan === plan.priceId ? (
+                    <Loader2 className="w-4 h-4 animate-spin mx-auto" />
+                  ) : plan.priceId ? (
+                    "Subscribe"
+                  ) : (
+                    "Get Started Free"
+                  )}
+                </button>
               </div>
-            </button>
-          ))}
+            );
+          })}
         </div>
       )}
 
