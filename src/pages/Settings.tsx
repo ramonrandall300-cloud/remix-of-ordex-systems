@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { ProfilePictureUpload } from "@/components/settings/ProfilePictureUpload";
 import { useTranslation } from "react-i18next";
 import { Save, RotateCcw, Trash2 } from "lucide-react";
 import { toast } from "sonner";
