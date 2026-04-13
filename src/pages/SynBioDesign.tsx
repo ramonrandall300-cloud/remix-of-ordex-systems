@@ -1,5 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/hooks/useAuth";
+import { useSynBioDesigns, useCreateSynBioDesign } from "@/hooks/useSynBioDesigns";
 import PlasmidDesigner from "@/components/synbio/PlasmidDesigner";
 import HostOrganismInput from "@/components/synbio/HostOrganismInput";
 import SequenceToolbar from "@/components/synbio/SequenceToolbar";
