@@ -188,10 +188,7 @@ export default function BillingUsage() {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-foreground">{pack.label}</span>
               </div>
-              <p className="text-2xl font-bold text-foreground mb-0.5">{pack.price}</p>
-              <p className="text-[10px] text-muted-foreground mb-3">
-                ${(parseFloat(pack.price.replace("$", "")) / pack.credits * 100).toFixed(1)}¢ {t("billing.perCredit")}
-              </p>
+              <p className="text-2xl font-bold text-foreground mb-3">{pack.price}</p>
               <button
                 onClick={() => handleBuyCredits(pack)}
                 disabled={buyingPack === pack.priceId}
