@@ -132,11 +132,8 @@ export default function SynBioDesign() {
   }, [seqName, seqTab, savedDesigns]);
 
   const handleRunValidation = useCallback(() => {
-    setValidationRun(false);
-    setTimeout(() => {
-      setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
-      setValidationRun(true);
-    }, 100);
+    setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
+    setValidationRun(true);
   }, [sequence, assemblyType, codonOrg]);
 
   const handleOptimize = useCallback(() => {
