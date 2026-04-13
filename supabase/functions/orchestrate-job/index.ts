@@ -100,6 +100,10 @@ const rateLimitMap = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
 const RATE_LIMIT_MAX = 10; // max 10 jobs per minute per user
 
+type EdgeRuntimeLike = {
+  waitUntil?: (promise: Promise<unknown>) => void;
+};
+
 function checkRateLimit(userId: string): boolean {
   const now = Date.now();
   const timestamps = rateLimitMap.get(userId) ?? [];
@@ -108,6 +112,34 @@ function checkRateLimit(userId: string): boolean {
   recent.push(now);
   rateLimitMap.set(userId, recent);
   return true;
+}
+
+function dispatchJobWorker(supabaseUrl: string, serviceKey: string) {
+  const request = fetch(`${supabaseUrl}/functions/v1/job-worker`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${serviceKey}`,
+    },
+    body: JSON.stringify({ source: "orchestrate-job" }),
+  }).then(async (response) => {
+    if (!response.ok) {
+      throw new Error(`job-worker dispatch failed (${response.status}): ${await response.text()}`);
+    }
+    return response;
+  });
+
+  const edgeRuntime = globalThis as typeof globalThis & { EdgeRuntime?: EdgeRuntimeLike };
+  if (edgeRuntime.EdgeRuntime?.waitUntil) {
+    edgeRuntime.EdgeRuntime.waitUntil(request.catch((error) => {
+      console.error("[orchestrate]", error.message);
+    }));
+    return;
+  }
+
+  request.catch((error) => {
+    console.error("[orchestrate]", error.message);
+  });
 }
 
 // ───────── Main handler ─────────
@@ -217,14 +249,14 @@ Deno.serve(async (req) => {
         if (ligandInfo) body._ligandSmiles = ligandInfo.smiles;
       }
 
-      // ── Step 6: Save job as QUEUED (no inline processing) ──
+      // ── Step 6: Save job as QUEUED ──
       if (workflowType === "protein_prediction") {
         const { data: rec, error } = await admin.from("protein_prediction_jobs").insert({
           user_id: user.id,
           name: body.name?.trim() || body.sequence.split("\n")[0]?.replace(">", "").trim() || "Protein",
           sequence: body.sequence,
           model: body.model || "ESMFold",
-           gpu_type: "Cloud",
+          gpu_type: "Cloud",
           priority: body.priority || "Normal",
           status: "queued",
           progress: 0,
@@ -235,9 +267,6 @@ Deno.serve(async (req) => {
         if (error) throw new Error(`DB insert failed: ${error.message}`);
         recordId = rec.id;
         jobNumber = rec.job_number;
-
-        // Job will be processed by job-worker / process-workflow
-
       } else if (workflowType === "docking") {
         const engine = body.engine || "AutoDock Vina";
         const { data: rec, error } = await admin.from("docking_jobs").insert({
@@ -260,9 +289,6 @@ Deno.serve(async (req) => {
         if (error) throw new Error(`DB insert failed: ${error.message}`);
         recordId = rec.id;
         jobNumber = rec.job_number;
-
-        // Job will be processed by job-worker / process-workflow
-
       } else {
         const { data: rec, error } = await admin.from("synbio_designs").insert({
           user_id: user.id,
@@ -278,8 +304,6 @@ Deno.serve(async (req) => {
         }).select().single();
         if (error) throw new Error(`DB insert failed: ${error.message}`);
         recordId = rec.id;
-
-        // SynBio doesn't need special compute — worker handles computation
       }
 
       // ── Step 7: Log usage ──
@@ -290,7 +314,9 @@ Deno.serve(async (req) => {
         description: `${workflowType} job${jobNumber ? ` #${jobNumber}` : ""}`,
       });
 
-      // Return immediately — worker/RunPod will process the job
+      // ── Step 8: Kick off the worker asynchronously ──
+      dispatchJobWorker(supabaseUrl, serviceKey);
+
       return json({
         success: true,
         recordId,
