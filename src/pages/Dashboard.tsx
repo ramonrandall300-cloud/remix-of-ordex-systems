@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocalizedNavigate } from "@/hooks/useLocalizedNavigate";
 import { ArrowUp, ArrowDown, CheckCircle, PlayCircle, MessageSquare, AlertCircle, CreditCard, Play, Zap, FlaskConical, Dna, Atom } from "lucide-react";
@@ -38,6 +38,20 @@ export default function Dashboard() {
     { table: "org_credits", onMessage: () => refetchCredits() },
   ], [refetchProtein, refetchDocking, refetchCredits]);
   useOrgRealtime(orgId, realtimeSubs);
+
+  // synbio_designs has no org_id, so subscribe directly scoped to user
+  useEffect(() => {
+    if (!user) return;
+    const channel = supabase
+      .channel("synbio-designs-dashboard")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "synbio_designs", filter: `user_id=eq.${user.id}` },
+        () => refetchSynbio()
+      )
+      .subscribe();
+    return () => { supabase.removeChannel(channel); };
+  }, [user, refetchSynbio]);
 
   const activeJobs = [...proteinJobs, ...dockingJobs].filter(j => j.status === "running" || j.status === "queued").length;
   const completedJobs = [...proteinJobs, ...dockingJobs].filter(j => j.status === "completed").length;
