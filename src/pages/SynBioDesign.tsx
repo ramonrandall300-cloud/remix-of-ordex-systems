@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import PlasmidDesigner from "@/components/synbio/PlasmidDesigner";
 import HostOrganismInput from "@/components/synbio/HostOrganismInput";
@@ -96,6 +96,22 @@ export default function SynBioDesign() {
   const restrictionSites = useMemo(() => analyzeRestrictionSites(sequence), [sequence]);
   const orfs = useMemo(() => findAllORFs(sequence, 20), [sequence]);
 
+  // ── Auto-validation on sequence/settings change (debounced) ────────
+  const autoValidateTimer = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => {
+    if (!sequence.trim()) {
+      setValidationResults([]);
+      setValidationRun(false);
+      return;
+    }
+    clearTimeout(autoValidateTimer.current);
+    autoValidateTimer.current = setTimeout(() => {
+      setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
+      setValidationRun(true);
+    }, 400);
+    return () => clearTimeout(autoValidateTimer.current);
+  }, [sequence, assemblyType, codonOrg]);
+
   const validationPasses = useMemo(
     () => validationResults.filter(r => r.status === "pass").length,
     [validationResults]
@@ -116,11 +132,8 @@ export default function SynBioDesign() {
   }, [seqName, seqTab, savedDesigns]);
 
   const handleRunValidation = useCallback(() => {
-    setValidationRun(false);
-    setTimeout(() => {
-      setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
-      setValidationRun(true);
-    }, 100);
+    setValidationResults(runFullValidation(sequence, assemblyType, codonOrg));
+    setValidationRun(true);
   }, [sequence, assemblyType, codonOrg]);
 
   const handleOptimize = useCallback(() => {
