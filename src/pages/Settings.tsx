@@ -120,7 +120,7 @@ export default function SettingsPage() {
               autoApproveCredits={autoApproveCredits} setAutoApproveCredits={setAutoApproveCredits}
               saving={saving} onSave={handleSaveProfile} onReset={handleReset}
               user={user}
-              onAvatarUpdated={() => supabase.auth.getSession()}
+              onAvatarUpdated={() => supabase.auth.getUser()}
             />
           )}
 
