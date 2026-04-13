@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { ProfilePictureUpload } from "@/components/settings/ProfilePictureUpload";
 import { useTranslation } from "react-i18next";
 import { Save, RotateCcw, Trash2 } from "lucide-react";
 import { toast } from "sonner";
@@ -115,10 +116,11 @@ export default function SettingsPage() {
               t={t}
               fullName={fullName} setFullName={setFullName}
               email={email} timezone={timezone} setTimezone={setTimezone}
-              
               showConfidence={showConfidence} setShowConfidence={setShowConfidence}
               autoApproveCredits={autoApproveCredits} setAutoApproveCredits={setAutoApproveCredits}
               saving={saving} onSave={handleSaveProfile} onReset={handleReset}
+              user={user}
+              onAvatarUpdated={() => supabase.auth.getSession()}
             />
           )}
 
@@ -148,10 +150,11 @@ export default function SettingsPage() {
   );
 }
 
-function ProfileSection({ t, fullName, setFullName, email, timezone, setTimezone, showConfidence, setShowConfidence, autoApproveCredits, setAutoApproveCredits, saving, onSave, onReset }: any) {
+function ProfileSection({ t, fullName, setFullName, email, timezone, setTimezone, showConfidence, setShowConfidence, autoApproveCredits, setAutoApproveCredits, saving, onSave, onReset, user, onAvatarUpdated }: any) {
   return (
     <div className="glass-card p-5 space-y-4">
       <h2 className="font-semibold text-foreground">👤 {t("settings.profileSettings")}</h2>
+      <ProfilePictureUpload user={user} onUpdated={onAvatarUpdated} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="text-xs text-muted-foreground block mb-1">{t("settings.fullName")}</label>
