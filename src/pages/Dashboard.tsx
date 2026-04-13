@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocalizedNavigate } from "@/hooks/useLocalizedNavigate";
 import { ArrowUp, ArrowDown, CheckCircle, PlayCircle, MessageSquare, AlertCircle, CreditCard, Play, Zap, FlaskConical, Dna, Atom } from "lucide-react";
