@@ -26,8 +26,30 @@ export function useJobPolling() {
     setTracking((prev) => prev.filter((t) => t.id !== id));
   };
 
+  // On mount or when tracking changes, check if any jobs are already done
   useEffect(() => {
     if (tracking.length === 0) return;
+
+    const checkInitialStatus = async () => {
+      for (const target of tracking) {
+        const { data } = await supabase
+          .from(target.table)
+          .select("id, status")
+          .eq("id", target.id)
+          .single();
+
+        if (data?.status === "completed") {
+          toast.success(`${target.label} completed!`);
+          untrack(data.id);
+          navigate(target.navigateTo);
+        } else if (data?.status === "failed") {
+          toast.error(`${target.label} failed`);
+          untrack(data.id);
+        }
+      }
+    };
+
+    checkInitialStatus();
 
     // Subscribe to each tracked job individually with filtered channels
     const channels = tracking.map((target) => {
